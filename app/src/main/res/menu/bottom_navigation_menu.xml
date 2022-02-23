@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bookFeedsFragment"
+        android:title="Feeds"
+        android:icon="@drawable/ic_nav_home_icon"/>
+
+    <item android:id="@+id/savedBooksFragment"
+        android:title="Saved Books"
+        android:icon="@drawable/ic_nav_saved_book_icon"/>
+
+    <item android:id="@+id/addBookFragment"
+        android:title="Add Book"
+        android:icon="@drawable/ic_nav_add_book_icon"/>
+
+    <item android:id="@+id/menuFragment"
+        android:title="More"
+        android:icon="@drawable/ic_nav_menu_icon"/>
+</menu>

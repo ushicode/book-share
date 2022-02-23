@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#004FFE</color>
+    <color name="primary_dark">#051876</color>
+    <color name="primary_light">#A4C5FE</color>
+    <color name="accent">#FFB907</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#FEE643</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+    <color name="light_grey">#efe9e5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!--  DEFAULT INSTALLATION COLOUR -->
+        <color name="purple_200">#FFBB86FC</color>
+        <color name="teal_700">#FF018786</color>
+
+
+
+</resources>

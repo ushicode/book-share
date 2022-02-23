@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <data>
+        <variable
+            name="bookViewModel"
+            type="com.collinsushi.bookshare.viewModel.BookViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarSize="0dp" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:paddingBottom="32dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_bookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{bookViewModel.selectedBookData.title}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/primary_text"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_bookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/primary_dark"
+            android:textStyle="normal"
+            android:text="@{bookViewModel.selectedBookData.author}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_bookTitle" />
+
+        <ImageView
+            android:id="@+id/iv_bookImage"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:bookImageUrl="@{bookViewModel.selectedBookData.imageUrl}"
+            app:layout_constraintTop_toBottomOf="@id/tv_bookAuthor"
+            app:layout_constraintBottom_toTopOf="@id/rb_bookRating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/book_title"
+            tools:src="@drawable/image_book_sample"
+            android:scaleType="fitCenter"/>
+
+        <RatingBar
+            android:id="@+id/rb_bookRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:rating="@{bookViewModel.selectedBookData.rating}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_bookImage"
+            android:isIndicator="true"
+            style="?android:attr/ratingBarStyle" />
+
+        <Button
+            android:id="@+id/btn_processAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/accent"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/process_action"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/rb_bookRating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/view_line"/>
+
+        <View
+            android:id="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@id/btn_processAction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_detailsTitle"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_detailsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/divider"
+            android:textStyle="normal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/book_detailsTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line"
+            app:layout_constraintBottom_toTopOf="@id/tv_bookDetail" />
+
+        <TextView
+            android:id="@+id/tv_bookDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/primary_text"
+            android:textStyle="normal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="@{bookViewModel.selectedBookData.details}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_detailsTitle"
+            app:layout_constraintBottom_toTopOf="@id/view_line2"/>
+
+        <View
+            android:id="@+id/view_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/light_grey"
+            app:layout_constraintTop_toBottomOf="@id/tv_bookDetail"
+            app:layout_constraintBottom_toTopOf="@id/tv_getMine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_getMine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/primary_dark"
+            android:text="@string/buy_book"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line2" />
+
+        <ImageView
+            android:id="@+id/iv_purchaseUrl"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_amazon_icon"
+            app:layout_constraintTop_toBottomOf="@id/view_line2"
+            app:layout_constraintStart_toEndOf="@id/tv_getMine"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/buy_book" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

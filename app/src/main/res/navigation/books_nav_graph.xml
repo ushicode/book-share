@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/books_nav_graph"
+    app:startDestination="@id/bookFeedsFragment">
+
+    <fragment
+        android:id="@+id/bookFeedsFragment"
+        android:name="com.collinsushi.bookshare.view.fragment.BookFeedsFragment"
+        android:label="BookFeedsFragment" >
+        <action
+            android:id="@+id/action_bookFeedsFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_in_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/savedBooksFragment"
+        android:name="com.collinsushi.bookshare.view.fragment.SavedBooksFragment"
+        android:label="BookInterestsFragment" >
+        <action
+            android:id="@+id/action_SavedbooksFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="com.collinsushi.bookshare.view.fragment.AddBookFragment"
+        android:label="BookChatsFragment" />
+
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.collinsushi.bookshare.view.fragment.MenuFragment"
+        android:label="MenuFragment" />
+
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.collinsushi.bookshare.view.fragment.BookDetailsFragment"
+        android:label="BookDetailsFragment" />
+</navigation>

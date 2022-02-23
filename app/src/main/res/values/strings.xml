@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BookShare</string>
+    <string name="book_title">Book Title</string>
+    <string name="book_author">Author Name</string>
+    <string name="process_action">Action</string>
+    <string name="book_detailsTitle">Details</string>
+    <string name="book_detail">book details</string>
+    <string name="buy_book">Want your copy ? </string>
+</resources>
